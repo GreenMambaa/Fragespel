@@ -1,4 +1,13 @@
 section {
   height: 80vh;
-  background-color: white;
+  background-color: black;
+}
+
+h1 {
+  font-family: 'Sigmar One', cursive;
+  color: #21ABCD;
+}
+
+.playbutton {
+  background-color: green;
 }

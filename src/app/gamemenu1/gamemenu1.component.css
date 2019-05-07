@@ -1,0 +1,9 @@
+h1 {
+  font-family: 'Sigmar One', cursive;
+  color: #21ABCD;
+}
+
+.input-group {
+  width: 50%;
+  margin: auto;
+}

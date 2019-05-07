@@ -5,27 +5,33 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { GamewindowComponent } from './gamewindow/gamewindow.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
-import { Gamemenu1Component } from './gamemenu1/gamemenu1.component';
-import { Gamemenu2Component } from './gamemenu2/gamemenu2.component';
+import { SignupComponent } from './signup/signup.component';
 import { ScoreComponent } from './score/score.component';
+import { GameComponent } from './game/game.component';
+import { GameService } from './game.service';
+import { Gamemode1Component } from './gamemode1/gamemode1.component';
+import { Gamemode2Component } from './gamemode2/gamemode2.component';
+import { Gamemode3Component } from './gamemode3/gamemode3.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    GamewindowComponent,
     NavComponent,
     FooterComponent,
-    Gamemenu1Component,
-    Gamemenu2Component,
-    ScoreComponent
+    SignupComponent,
+    GameComponent,
+    ScoreComponent,
+    GameComponent,
+    Gamemode1Component,
+    Gamemode2Component,
+    Gamemode3Component
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,7 @@ import { ScoreComponent } from './score/score.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [GameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

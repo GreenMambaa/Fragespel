@@ -1,4 +1,3 @@
-
 <h1>Frågespel</h1>
 <form class="text-white" #registerForm="ngForm" (ngSubmit)="OnSubmit(Name.value,Email.value)">
   <div class="row">
@@ -17,7 +16,7 @@
   </div>
   <div class="row">
     <div class="input-field col s12">
-      <button class="btn-large btn-submit" type="submit" [disabled]="!registerForm.valid">Start</button>
+      <button class="btn-large btn-submit signupbtn" type="submit" [disabled]="!registerForm.valid" (click)="signupclick()">Play</button>
     </div>
   </div>
 </form>

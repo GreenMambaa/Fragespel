@@ -1,7 +1,11 @@
-
 section {
   height: 100vh;
   background-color: black;
+}
+
+h1 {
+  font-family: 'Sigmar One', cursive;
+  color: #21ABCD;
 }
 
 p {

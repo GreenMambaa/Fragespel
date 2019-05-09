@@ -28,4 +28,5 @@ export class GameComponent implements OnInit {
   mode3click(): void {
     this.router.navigate(['/game3']);
   }
+
 }

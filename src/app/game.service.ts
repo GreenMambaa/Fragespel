@@ -6,5 +6,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GameService {
 
+  apiMovieUrl = 'http://www.omdbapi.com/?s=batman&apikey=7eeb20de';
+  movies: any;
+
   constructor(private http: HttpClient) { }
+
+  getMovieData() {
+    return this.movies = this.http.get(this.apiMovieUrl);
+  }
 }

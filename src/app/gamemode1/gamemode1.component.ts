@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { GameService } from '../game.service';
 @Component({
   selector: 'app-gamemode1',
   templateUrl: './gamemode1.component.html',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Gamemode1Component implements OnInit {
 
-  constructor() { }
+  movieData: object;
+
+  constructor(private gameService: GameService) { }
 
   ngOnInit() {
+
+    this.gameService.getMovieData().subscribe(data => {
+      this.movieData = data;
+      console.log(this.movieData);
+    });
+
   }
 
 }

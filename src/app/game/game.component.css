@@ -1,6 +1,7 @@
 section {
   height: 100vh;
-  background-color: black;
+  background-image: url("https://cdn.wallpapersafari.com/85/62/ErkFLA.jpg");
+  background-size:cover;
 }
 
 h1 {

@@ -1,16 +1,28 @@
 section {
-  height: 110vh;
+  height: 100vh;
   background-color: black;
 }
 
 h1 {
   font-family: 'Sigmar One', cursive;
   color: #21ABCD;
+  font-size: 3em;
 }
 
 p {
   font-family: 'Monoton', cursive;
   font-size: 3em;
+}
 
+.timer {
+  font-family: 'Sigmar One', cursive;
+}
+
+.cup {
+  margin-left: 45%;
+}
+
+.highscore {
+  font-family: 'Sigmar One', cursive;
 }
 

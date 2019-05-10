@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../game.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-gamemode1',
   templateUrl: './gamemode1.component.html',
@@ -13,7 +14,8 @@ export class Gamemode1Component implements OnInit {
 
   constructor(private gameService: GameService,
               private activatedRoute: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              public location: Location) { }
 
   ngOnInit() {
 
@@ -24,20 +26,22 @@ export class Gamemode1Component implements OnInit {
 
   }
 
-  Answer1click(): void {
-    this.router.navigate(['/game1']);
+  answer1click(): void {
+    this.router.navigateByUrl('/game1', { skipLocationChange: true }).then(() => {
+    this.router.navigate([decodeURI(this.location.path())]);
+    });
   }
 
-  Answer2click(): void {
-    this.router.navigate(['/game1']);
+  answer2click(): void {
+    this.router.navigate(['/game']);
   }
 
-  Answer3click(): void {
-    this.router.navigate(['/game1']);
+  answer3click(): void {
+    location.reload();
   }
 
-  Answer4click(): void {
-    this.router.navigate(['/game1']);
+  answer4click(): void {
+    location.reload();
   }
 
 }

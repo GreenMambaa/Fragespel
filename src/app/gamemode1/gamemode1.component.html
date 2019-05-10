@@ -1,35 +1,38 @@
-<p>
-  Game Quiz {{ randomNr }}
-</p>
+<h1>Game Quiz</h1>
 
 <div class="container">
   <section class="gamebox text-center p-5 m-5">
     <div class="row">
-      <div class="input-field col s12">
-        <h1>Game Quiz</h1>
+      <img src="../../assets/Images/Timer.png" height="50" width="50">
+      <p class="timer text-white pl-4 pr-5"> 0:00 </p>
+      <img src="../../assets/Images/Cup.png" class="cup" height="50" width="50">
+      <p class="highscore text-white pl-4"> 00 </p>
+    </div>
+    <div class="row">
+      <div class="input-field col">
         <div class="row">
           <div class="col">
             <div class="row">
-              <h3 class="text-white pt-5">When did {{movieData.Title}} release?</h3>
+              <h3 class="text-white pt-3">When did {{movieData.Title}} release?</h3>
             </div>
             <div class="row pt-5">
               <div class="col">
-                <button class="btn-large btn-submit m-1" type="submit" (click)="Answer1click()">{{movieData.Year}}</button>
+                <button class="btn-large btn-submit m-1" type="submit" (click)="answer1click()">{{movieData.Year}}</button>
               </div>
               <div class="col">
-                <button class="btn-large btn-submit m-1" type="submit" (click)="Answer2click()">{{movieData.Year*1 + 5*1}}</button>
+                <button class="btn-large btn-submit m-1" type="submit" (click)="answer2click()">{{movieData.Year*1 + 5*1}}</button>
               </div>
             </div>
             <div class="row">
               <div class="col">
-                <button class="btn-large btn-submit m-1" type="submit" (click)="Answer3click()">{{movieData.Year*1 + 2*1}}</button>
+                <button class="btn-large btn-submit m-1" type="submit" (click)="answer3click()">{{movieData.Year*1 + 2*1}}</button>
               </div>
               <div class="col">
-                <button class="btn-large btn-submit m-1" type="submit" (click)="Answer4click()">{{movieData.Year*1 - 3*1}}</button>
+                <button class="btn-large btn-submit m-1" type="submit" (click)="answer4click()">{{movieData.Year*1 - 3*1}}</button>
               </div>
             </div>
           </div>
-          <div class="col pt-5">
+          <div class="col pt-3">
             <img [src]="movieData.Poster" alt="Smiley face" height="300" width="150">
           </div>
         </div>

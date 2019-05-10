@@ -13,7 +13,7 @@ export class GameService {
 
   constructor(private http: HttpClient) { }
 
-  getMovieData(movieID: number) {
+  getMovieData() {
     return this.movies = this.http.get(this.apiUrl);
   }
 

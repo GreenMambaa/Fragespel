@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { GameService } from '../game.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, timer } from 'rxjs';
 import { Location } from '@angular/common';
+
+declare var randomID: any;
 @Component({
   selector: 'app-gamemode1',
   templateUrl: './gamemode1.component.html',
@@ -10,7 +13,13 @@ import { Location } from '@angular/common';
 
 export class Gamemode1Component implements OnInit {
 
+  @Input() init: number = null;
+  public timeCount = 10;
+
   movieData: object;
+  randomID: any;
+  timeCounter: any;
+  highscoreCount = 0;
 
   constructor(private gameService: GameService,
               private activatedRoute: ActivatedRoute,
@@ -19,16 +28,40 @@ export class Gamemode1Component implements OnInit {
 
   ngOnInit() {
 
-    this.gameService.getMovieData(2).subscribe(data => {
+    this.gameService.getMovieData().subscribe(data => {
       this.movieData = data;
       console.log(this.movieData);
     });
 
+    this.startCountdown();
+
+  }
+
+  startCountdown() {
+    if (this.timeCount && this.timeCount > 0) {
+      this.doCountdown();
+    }
+  }
+
+  doCountdown() {
+    setTimeout(() => {
+      this.timeCount = this.timeCount - 1;
+      this.processCountdown();
+    }, 1000);
+  }
+
+  processCountdown() {
+    if (this.timeCount === 0) {
+
+    } else {
+      this.doCountdown();
+    }
   }
 
   answer1click(): void {
-    this.router.navigateByUrl('/game1', { skipLocationChange: true }).then(() => {
+    this.router.navigateByUrl('/game', { skipLocationChange: true }).then(() => {
     this.router.navigate([decodeURI(this.location.path())]);
+    return this.randomID = randomID++;
     });
   }
 

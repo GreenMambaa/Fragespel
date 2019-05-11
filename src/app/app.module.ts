@@ -26,7 +26,6 @@ import { Gamemode3Component } from './gamemode3/gamemode3.component';
     NavComponent,
     FooterComponent,
     SignupComponent,
-    GameComponent,
     ScoreComponent,
     GameComponent,
     Gamemode1Component,

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GameService } from '../game.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-score',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScoreComponent implements OnInit {
 
-  constructor() { }
+  highscoreCount: any;
+  score = 0;
+
+  constructor(private router: Router,
+              private gameService: GameService) { }
 
   ngOnInit() {
+
+  this.gameService.shareScore.subscribe(score => this.score = score);
+
   }
 
 }

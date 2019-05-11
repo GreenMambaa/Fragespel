@@ -18,8 +18,8 @@ export class Gamemode1Component implements OnInit {
 
   movieData: object;
   randomID: any;
-  timeCounter: any;
-  highscoreCount = 0;
+  highscoreCount: any;
+  score = 0;
 
   constructor(private gameService: GameService,
               private activatedRoute: ActivatedRoute,
@@ -34,6 +34,8 @@ export class Gamemode1Component implements OnInit {
     });
 
     this.startCountdown();
+
+    this.gameService.shareScore.subscribe(score => this.score = score);
 
   }
 
@@ -58,23 +60,31 @@ export class Gamemode1Component implements OnInit {
     }
   }
 
+  updateScore(score: any) {
+    this.gameService.updateScore(this.score + 10);
+  }
+
   answer1click(): void {
     this.router.navigateByUrl('/game', { skipLocationChange: true }).then(() => {
     this.router.navigate([decodeURI(this.location.path())]);
-    return this.randomID = randomID++;
+    this.randomID = randomID++;
     });
+    this.updateScore(this.score);
   }
 
   answer2click(): void {
     this.router.navigate(['/game']);
+    this.updateScore(this.score);
   }
 
   answer3click(): void {
     location.reload();
+    this.highscoreCount = this.highscoreCount + 10;
   }
 
   answer4click(): void {
     location.reload();
+    this.updateScore(this.score);
   }
 
 }

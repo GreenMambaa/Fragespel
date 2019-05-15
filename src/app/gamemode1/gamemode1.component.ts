@@ -29,8 +29,8 @@ export class Gamemode1Component implements OnInit {
   ngOnInit() {
 
     this.gameService.getMovieData().subscribe(data => {
-      this.movieData = data;
-      console.log(this.movieData);
+      this.movieData = data.results[randomIndex];
+      console.log("MOVIE", this.movieData);
     });
 
     this.startCountdown();

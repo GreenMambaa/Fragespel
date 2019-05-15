@@ -10,7 +10,7 @@ declare var randomID: any;
 export class GameService {
 
   movies: any;
-  apiUrl = `http://www.omdbapi.com/?i=tt03${randomID}&apikey=7eeb20de`;
+  apiUrl = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&page=${randomPage}&api_key=16903378f40153cb3d5fbc1b776a4aca`;
 
   private highscoreCount = new BehaviorSubject<any>(0);
   public shareScore = this.highscoreCount.asObservable();

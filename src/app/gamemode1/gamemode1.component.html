@@ -16,18 +16,18 @@
             </div>
             <div class="row pt-5">
               <div class="col">
-                <button class="btn-large btn-submit m-1" type="submit" (click)="answer1click()">{{movieData.Year}}</button>
+                <button class="btn-large btn-submit m-1" type="submit" (click)="answer1click()" onmousedown="win.play()">{{movieData.Year}}</button>
               </div>
               <div class="col">
-                <button class="btn-large btn-submit m-1" type="submit" (click)="answer2click()">{{movieData.Year*1 + 5*1}}</button>
+                <button class="btn-large btn-submit m-1" type="submit" (click)="answer2click()" onmousedown="lose.play()">{{movieData.Year*1 + 5*1}}</button>
               </div>
             </div>
             <div class="row">
               <div class="col">
-                <button class="btn-large btn-submit m-1" type="submit" (click)="answer3click()">{{movieData.Year*1 + 2*1}}</button>
+                <button class="btn-large btn-submit m-1" type="submit" (click)="answer3click()" onmousedown="lose.play()">{{movieData.Year*1 + 2*1}}</button>
               </div>
               <div class="col">
-                <button class="btn-large btn-submit m-1" type="submit" (click)="answer4click()">{{movieData.Year*1 - 3*1}}</button>
+                <button class="btn-large btn-submit m-1" type="submit" (click)="answer4click()" onmousedown="lose.play()">{{movieData.Year*1 - 3*1}}</button>
               </div>
             </div>
           </div>

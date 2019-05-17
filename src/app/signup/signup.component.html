@@ -1,20 +1,20 @@
-<h1>Game Quiz</h1>
+<h1 class="pb-5">Game Quiz</h1>
 <form class="text-white" #registerForm="ngForm" (ngSubmit)="OnSubmit(Name.value,Email.value)">
   <div class="row">
     <div class="input-field col s12">
       <i class="material-icons prefix">account_circle</i>
-      <input type="text" name="Name" #Name ngModel required>
-      <label>Name</label>
+      <input placeholder="Name" type="text" name="Name" #Name ngModel required>
+      <label></label>
     </div>
   </div>
   <div class="row">
     <div class="input-field col s12">
       <i class="material-icons prefix">mail_outline</i>
-      <input type="text" name="Email" #Email ngModel required [pattern]="emailPattern">
-      <label>Email</label>
+      <input placeholder="Email" type="text" name="Email" #Email ngModel required [pattern]="emailPattern">
+      <label></label>
     </div>
   </div>
-  <div class="row">
+  <div class="row pt-5">
     <div class="input-field col s12">
       <button class="btn-large btn-submit signupbtn" type="submit" [disabled]="!registerForm.valid" (click)="signupclick()">Play</button>
     </div>

@@ -13,7 +13,8 @@ import { Location } from '@angular/common';
 export class Gamemode1Component implements OnInit {
 
   @Input() init: number = null;
-  public timeCount = 10;
+
+  public timeCount: number;
 
   movieData: object;
   score = 0;
@@ -25,6 +26,10 @@ export class Gamemode1Component implements OnInit {
               private http: HttpClient) { }
 
   randomMovie = Math.floor(Math.random() * 10000);
+
+
+  question1 = `What year did {{movieData.Title}} release?`;
+
 
   getMovieData() {
     return this.http.get(`http://www.omdbapi.com/?i=tt011${this.randomMovie}&apikey=7eeb20de`);
@@ -42,6 +47,7 @@ export class Gamemode1Component implements OnInit {
   }
 
   startCountdown() {
+    this.timeCount = 10;
     if (this.timeCount && this.timeCount > 0) {
       this.doCountdown();
     }
@@ -56,7 +62,9 @@ export class Gamemode1Component implements OnInit {
 
   processCountdown() {
     if (this.timeCount === 0) {
-
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigate([decodeURI(this.location.path())]);
+      });
     } else {
       this.doCountdown();
     }
